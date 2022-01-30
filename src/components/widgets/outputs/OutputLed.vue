@@ -40,7 +40,7 @@ export default class OutputLed extends Mixins(StateMixin) {
 
   get whiteColor () {
     const vals = this.convertTo(this.led.color_data[0])
-    if (!vals.w) return undefined
+    if (vals.w === undefined) return undefined
     const c = new IroColor({ r: vals.w, g: vals.w, b: vals.w })
     return c.hexString
   }
